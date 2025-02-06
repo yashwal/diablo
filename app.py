@@ -1,6 +1,11 @@
+from flask import Flask
 
-def main():
-    print("Hello World!")
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world():
+    return "<p>Hello, World!</p>"
+
 
 if __name__ == "__main__":
-    main()
+    app.run("0.0.0.0",debug=True)
